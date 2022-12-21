@@ -1,0 +1,21 @@
+.mainImageBanner {
+    position: relative;
+    padding-top: 135px;
+    margin: auto;
+    & img {
+        height: auto;
+    }
+    .overlay {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        & h1, h3 {
+            font-family: sans-serif;
+        }
+    }
+    @media screen and (max-width : 760px) {
+        img {
+            height: 200px !important;
+        }
+    }
+}

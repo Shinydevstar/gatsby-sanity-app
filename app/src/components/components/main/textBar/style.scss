@@ -1,0 +1,12 @@
+.text_bar {
+    padding: 0 24px;
+    margin: auto;
+    @media screen and (max-width : 760px) {
+        h3 {
+            font-size: 34px;
+        }
+        h5 {
+            font-size: 20px;
+        }
+    }
+}
