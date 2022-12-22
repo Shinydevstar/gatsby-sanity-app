@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import { StaticImage } from "gatsby-plugin-image";
 import { Link } from 'gatsby'
-import { nav_link_data } from '../../assets/demo';
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { useStaticQuery, graphql } from "gatsby"
+import { nav_link_data } from '../../assets/demo';
 import './style.scss';
 
-const Header = () => {
+const Header = (props) => {
 
-    
-
+    const { data } = props;
     const [  responsiveNav, setResponsiveNav ] = useState(false);
-    // const { data } = props;
+
+    data.navItems.forEach((item) => {
+        nav_link_data.forEach((link) => {
+            if (item.text === link.link_name) {
+                item.icon = link.icon;
+            }
+        })
+    })
+    console.log(data.navItems)
 
     const showResponsiveNav = (element) => {
         element.classList.toggle("responsive_nav_animated_button");
@@ -24,14 +29,13 @@ const Header = () => {
                     <div className='row'>
                         <div className='col-xl-5 col-3 d-flex' style={{ paddingTop: '35px', paddingBottom: '35px' }}>
                             <div className='logo-box'>
-                                {/* {data ? (
+                                {data ? (
                                     <GatsbyImage
                                         alt=""
                                         className="logoImage"
-                                        image={data}
+                                        image={data.logoImage.asset.gatsbyImageData}
                                     />
-                                ) : null} */}
-                                <StaticImage src='../../assets/images/logo.png' alt='' className='logoImage' />
+                                ) : null}
                             </div>
                             <div className='search-box d-xl-flex d-none align-items-center'>
                                 <input type="text" name="search" className='search-input' placeholder='Search...' />
@@ -45,12 +49,12 @@ const Header = () => {
                         </div>
                         <div className='col-xl-7 col-9'>
                             <div className='nav d-lg-flex d-none align-items-center justify-content-end h-100'>
-                                {nav_link_data.map((item, index) => {
+                                {data.navItems.map((item, index) => {
                                     return (
-                                        <Link to={""} key={index}>
+                                        <Link to={item.href} key={index}>
                                             <div className='nav-item d-flex align-items-center justify-content-center'>
                                                 {item.icon}
-                                                <span className="nav-item-title">{item.link_name}</span>
+                                                <span className="nav-item-title">{item.text}</span>
                                             </div>
                                         </Link>
                                     )
@@ -77,9 +81,9 @@ const Header = () => {
                                 </div>
                             </div>
                             <div className='responsive_nav_menu'>
-                                {nav_link_data.map((item, index) => {
+                                {data.navItems.map((item, index) => {
                                     return (
-                                        <div className='pb-4'><Link to="">{item.icon}<span className='responsive_nav_menu_item'>{item.link_name}</span></Link></div>
+                                        <div className='pb-4'><Link to={item.href}>{item.icon}<span className='responsive_nav_menu_item'>{item.text}</span></Link></div>
                                     )
                                 })}
                             </div>

@@ -1,7 +1,7 @@
 export default {
     name: "navItemGroup",
     title: "Nav Item Group",
-    type: "document",
+    type: "object",
     fields: [
       { title: "Name", name: "name", type: "string" },
       {

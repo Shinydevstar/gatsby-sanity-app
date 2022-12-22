@@ -1,7 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-const Footer = () => {
+const Footer = (props) => {
+
+    const { data } = props;
 
     const Footer = styled.div`
         background-color: #212429;
@@ -68,8 +70,8 @@ const Footer = () => {
     const FooterSubNav = props => (
         props.sub_nav_data.map((item, index) => {
             return (
-                <div key={index}>
-                   <FooterNavItem to=""><p>{item.sub_nav_item}</p></FooterNavItem> 
+                <div className={props.className} key={index}>
+                   <FooterNavItem to={item.href}><p>{item.text}</p></FooterNavItem> 
                 </div>
             )
         })
@@ -85,36 +87,12 @@ const Footer = () => {
                                 <div className='col-md-7 col-sm-12 col-12 pb-3'>
                                     <FooterNavHeading className='footer_nav_heading'>quick links</FooterNavHeading>
                                     <div className='row'>
-                                        <div className='col-md-6 col-6'>
-                                            <FooterSubNav 
-                                                sub_nav_data={[
-                                                    { id: 1, sub_nav_item: 'Home' },
-                                                    { id: 2, sub_nav_item: 'Stockists' },
-                                                    { id: 3, sub_nav_item: 'Privacy Policy' },
-                                                    { id: 4, sub_nav_item: 'Ambassador Portal' },
-                                                ]} 
-                                            />
-                                        </div>
-                                        <div className='col-6'>
-                                            <FooterSubNav 
-                                                sub_nav_data={[
-                                                    { id: 1, sub_nav_item: 'Blog' },
-                                                    { id: 2, sub_nav_item: 'Contact' },
-                                                    { id: 3, sub_nav_item: 'Terms of Service' },
-                                                ]} 
-                                            />
-                                        </div>
+                                        <FooterSubNav sub_nav_data={data.quickLinks} className={'col-md-6 col-6'} />
                                     </div>
                                 </div>
                                 <div className='col-md-5 col-sm-6'>
                                     <FooterNavHeading className='footer_nav_heading'>blog</FooterNavHeading>
-                                        <FooterSubNav 
-                                            sub_nav_data={[
-                                                { id: 1, sub_nav_item: 'Fat vs Fat Loss' },
-                                                { id: 2, sub_nav_item: 'Adrenal Fatigue' },
-                                                { id: 3, sub_nav_item: 'Muscle Growth' },
-                                            ]} 
-                                        />
+                                        <FooterSubNav sub_nav_data={data.blog} className={'col-12'} />
                                 </div>
                             </div>
                         </FooterLeftSubNav>                       
@@ -126,7 +104,7 @@ const Footer = () => {
                                 <FooterInput className='footer_input' type="email" name="email" placeholder='Your email address' />
                                 <FooterSubscribeButton className='footer_subscribe_button'>Subscribe</FooterSubscribeButton>
                             </FooterEmailBox>
-                            <SiteInfo className='site_info'>© 2022 Inception Labs Limited</SiteInfo>
+                            <SiteInfo className='site_info'>{data.copyright}</SiteInfo>
                         </FooterRightSubNav>
                     </div>
                 </div>

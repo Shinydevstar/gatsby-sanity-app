@@ -7,7 +7,7 @@
 require('dotenv').config()
 
 const { projectId, dataset } = {
-  projectId: process.env.SANITY_PROJECT_ID || '57rreuq7',
+  projectId: process.env.SANITY_PROJECT_ID || 'k8g1t4dz',
   dataset: process.env.SANITY_DATASET || 'production',
 }
 /**

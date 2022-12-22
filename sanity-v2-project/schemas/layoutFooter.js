@@ -1,7 +1,7 @@
 export default {
     name: "layoutFooter",
     title: "Layout Footer",
-    type: "document",
+    type: "object",
     fields: [
         {
             title: "Quick Links",
@@ -9,8 +9,7 @@ export default {
             type: "array",
             of: [
                 {
-                    type: "reference",
-                    to: [{ type: "footerQuickLinks" }],
+                    type: "footerQuickLinks",
                 },
             ],
         },
@@ -20,8 +19,7 @@ export default {
             type: "array",
             of: [
                 {
-                    type: "reference",
-                    to: [{ type: "footerBlog" }],
+                    type: "footerBlog",
                 },
             ],
         },

@@ -1,4 +1,4 @@
-export { default as HomepageTopTextBar } from './main/mainImageBanner'
-export { default as HomepageImageTextBar } from './main/text_image_section'
-export { default as HomepageBottomTextBar } from './main/textBar'
-export { default as HomepageImageBar } from './main/imageBar'
+export { default as MainImageBanner } from './main/mainImageBanner'
+export { default as Headline } from './main/headline'
+export { default as MediaTextBanner } from './main/mediaTextBanner'
+export { default as ProductImageBanner } from './main/productImageBanner'

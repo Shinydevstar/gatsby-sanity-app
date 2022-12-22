@@ -1,19 +1,20 @@
 {
   "root": true,
-  "project": {
-    "name": "default",
-    "title": "Sanity-v2-project"
-  },
   "api": {
     "projectId": "k8g1t4dz",
     "dataset": "production"
+  },
+  "project": {
+    "name": "default",
+    "title": "Studio-v2"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "time-seconds"
+    "time-seconds",
+    "mux-input"
   ],
   "env": {
     "development": {
@@ -29,4 +30,3 @@
     }
   ]
 }
-  

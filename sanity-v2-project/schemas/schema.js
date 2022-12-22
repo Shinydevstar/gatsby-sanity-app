@@ -1,24 +1,24 @@
 import createSchema from "part:@sanity/base/schema-creator"
 import schemaTypes from "all:part:@sanity/base/schema-type"
 
-import homepage from "./homepage"
-import homepageLink from "./homepageLink"
-import homepageHero from "./homepageHero"
-import homepageTopTextBar from "./homepageTopTextBar"
-import homepageBottomTextBar from "./homepageBottomTextBar"
-import homepageProductImage from "./homepageProductImage"
-import homepageImageBar from "./homepageImageBar"
-import homepageImageTextBar from "./homepageImageTextBar"
+import marketingPage from "./marketingPage"
+import marketingPageHeadline from "./marketingPageHeadline"
+import marketingPageLink from "./marketingPageLink"
+import marketingPageMainImageBanner from './marketingPageMainImageBanner'
+import marketingPageMedia from './marketingPageMedia'
+import marketingPageMediaTextBanner from "./marketingPageMediaTextBanner"
+import marketingPageMetaData from './marketingPageMetaData'
+import marketingPageProductImage from "./marketingPageProductImage"
+import marketingPageProductImageBanner from "./marketingPageProductImageBanner"
 
-import navItem from "./navItem"
-import navItemGroup from "./navItemGroup"
-import footerBlog from "./footerBlog"
-import footerQuickLinks from "./footerQuickLinks"
-import layoutHeader from "./layoutHeader"
-import layoutFooter from "./layoutFooter"
 import layout from "./layout"
+import layoutFooter from './layoutFooter'
+import layoutHeader from './layoutHeader'
+import footerBlog from './footerBlog'
+import footerQuickLinks from './footerQuickLinks'
 
-import page from "./page"
+import navItem from './navItem'
+import navItemGroup from './navItemGroup'
 
 export default createSchema({
 
@@ -26,24 +26,24 @@ export default createSchema({
 
   types: schemaTypes.concat([
 
-    homepage,
-    homepageLink,
-    homepageHero,
-    homepageTopTextBar,
-    homepageBottomTextBar,
-    homepageProductImage,
-    homepageImageBar,
-    homepageImageTextBar,
+    marketingPage,
+    marketingPageHeadline,
+    marketingPageLink,
+    marketingPageMetaData,
+    marketingPageMainImageBanner,
+    marketingPageMedia,
+    marketingPageMediaTextBanner,
+    marketingPageProductImage,
+    marketingPageProductImageBanner,
 
-    navItem,
-    navItemGroup,
+    layout,
+    layoutFooter,
+    layoutHeader,
     footerBlog,
     footerQuickLinks,
-    layoutHeader,
-    layoutFooter,
-    layout,
 
-    page,
+    navItem,
+    navItemGroup
 
   ]),
 })

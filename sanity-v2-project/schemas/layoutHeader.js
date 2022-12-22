@@ -1,6 +1,6 @@
 export default {
     name: 'layoutHeader',
-    type: 'document',
+    type: 'object',
     title: 'Layout Header',
     fields: [
         {
@@ -17,8 +17,7 @@ export default {
             type: "array",
             of: [
                 {
-                    type: "reference",
-                    to: [{ type: "navItem" }, { type: "navItemGroup" }],
+                    type: "navItem",
                 },
             ],
         },
